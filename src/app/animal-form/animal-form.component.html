@@ -1,0 +1,14 @@
+<div class="alert alert-success" role="alert" [hidden]="!adicionado">
+        <strong>Well done {{nome}}!</strong> You successfully read this important alert message.
+</div>
+    
+<div class="input-group">
+        <label>Nome</label>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" 
+        (input)='mudaNome($event)' [(ngModel)]='nome' (focus)="adicionado = false">
+</div>
+
+<div>
+        <button type="button" class="btn btn-success" (click)='adiciona()'  
+        [disabled]='nome.length == 0'>Click</button>
+</div>
